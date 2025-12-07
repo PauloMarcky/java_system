@@ -1,0 +1,10 @@
+service_package\TuitionManager.class
+model_package\Student.class
+interface_package\Payable.class
+model_package\Payment.class
+dao_package\StudentDAO.class
+dao_package\PaymentDAO.class
+model_package\YearLevel.class
+main_package\Main.class
+util_package\DBConnection.class
+model_package\Person.class
