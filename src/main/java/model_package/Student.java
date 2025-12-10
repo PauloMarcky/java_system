@@ -20,7 +20,7 @@ public class Student extends Person implements Payable{
     * - implements Payable (interface) - polymorphism possible
     * - overrides displayInfo() from Person (inheritance + overriding)
     */
-     private String course;
+    private String course;
     private YearLevel yearLevel;
     private double tuition;
     private double paidAmount;
@@ -51,19 +51,37 @@ public class Student extends Person implements Payable{
     }
 
     // getters/setters -> encapsulation
-    public String getCourse() { return course; }
-    public void setCourse(String course) { this.course = course; }
+    public String getCourse() {
+        return course; 
+    }
+    public void setCourse(String course) {
+        this.course = course; 
+    }
 
-    public YearLevel getYearLevel() { return yearLevel; }
-    public void setYearLevel(YearLevel yearLevel) { this.yearLevel = yearLevel; }
+    public YearLevel getYearLevel() {
+        return yearLevel; 
+    }
+    public void setYearLevel(YearLevel yearLevel) {
+        this.yearLevel = yearLevel; 
+    }
 
-    public double getTuition() { return tuition; }
-    public void setTuition(double tuition) { this.tuition = tuition; }
+    public double getTuition() {
+        return tuition; 
+    }
+    public void setTuition(double tuition) {
+        this.tuition = tuition; 
+    }
 
-    public double getPaidAmount() { return paidAmount; }
-    public void setPaidAmount(double paidAmount) { this.paidAmount = paidAmount; }
+    public double getPaidAmount() {
+        return paidAmount; 
+    }
+    public void setPaidAmount(double paidAmount) {
+        this.paidAmount = paidAmount; 
+    }
 
-    public List<Payment> getPaymentHistory() { return paymentHistory; }
+    public List<Payment> getPaymentHistory() {
+        return paymentHistory; 
+    }
 
     // compute remaining balance -> demonstrates a method that returns a value
     public double getRemainingBalance() {

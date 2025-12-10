@@ -12,8 +12,14 @@ public enum YearLevel {
     FIRST_YEAR(1), SECOND_YEAR(2), THIRD_YEAR(3), FOURTH_YEAR(4);
 
     private final int level;
-    YearLevel(int level) { this.level = level; }
-    public int getLevel() { return level; }
+    
+    YearLevel(int level) {
+        this.level = level; 
+    }
+    
+    public int getLevel() {
+        return level; 
+    }
 
     public static YearLevel fromInt(int i) {
         switch (i) {

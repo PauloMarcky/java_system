@@ -166,7 +166,7 @@ public class TuitionManager {
 
     // Demonstrate nested loops and 2D array printing
     private void showTuitionMatrix() {
-        System.out.println("\n==== TUITION COST MATRIX (Course x YearLevel) ====");
+        System.out.println("\n          ==== TUITION COST MATRIX (Course x YearLevel) ====\n");
         // header
         System.out.print("Course\\Year\t");
         for (int c = 1; c <= 4; c++) System.out.print("Year " + c + "        " + "\t");

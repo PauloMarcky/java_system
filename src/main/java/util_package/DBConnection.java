@@ -5,7 +5,7 @@
 package util_package;
 import java.sql.Connection;
 import java.sql.DriverManager;
- import java.sql.SQLException;
+import java.sql.SQLException;
 /**
  *
  * @author paulo
@@ -13,17 +13,8 @@ import java.sql.DriverManager;
 public class DBConnection {
 
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/tuition_db?useSSL=false&serverTimezone=UTC";
-    private static final String USER = "root";       // <-- change to your DB user
-    private static final String PASSWORD = "ampogiko25"; // <-- change to your DB password
-
-    static {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL Connector/J 8.x
-        } catch (ClassNotFoundException e) {
-            System.err.println("MySQL JDBC Driver not found. Add connector jar to classpath.");
-            e.printStackTrace();
-        }
-    }
+    private static final String USER = "root";       
+    private static final String PASSWORD = "marcky";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);

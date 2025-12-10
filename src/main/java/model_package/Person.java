@@ -26,15 +26,31 @@ public abstract class Person {
     }
 
     // getters/setters -> encapsulation
-    public String getStudentId() { return studentId; }
-    public void setStudentId(String studentId) { this.studentId = studentId; }
+    public String getStudentId(){
+        return studentId; 
+    }
+    
+    public void setStudentId(String studentId){
+        this.studentId = studentId; 
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public String getLastName(){
+        return lastName; 
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName; 
+    }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public String getFirstName(){
+        return firstName; 
+    }
+    
+    public void setFirstName(String firstName){
+        this.firstName = firstName; 
+    }
 
     // abstract method -> must be implemented by subclasses
     public abstract void displayInfo();
+    
 }
