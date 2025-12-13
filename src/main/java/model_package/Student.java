@@ -89,7 +89,7 @@ public class Student extends Person implements Payable {
         }
 
         for (int i = 0; i < paymentCount; i++) {
-            System.out.println(paymentHistory[i].toString());
+            paymentHistory[i].printPaymentDetails();
         }
     }
 }

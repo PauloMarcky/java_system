@@ -7,7 +7,7 @@ package model_package;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Payment {
+public class Payment{
 
     private double amount;
     private String method;
@@ -29,9 +29,11 @@ public class Payment {
         return timestamp; 
     }
 
-    @Override
-    public String toString() {
+    public void printPaymentDetails() {
+
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return "Paid: " + String.format("%.2f", amount) + " (" + method + ") | Date: " + timestamp.format(fmt);
+        
+        System.out.println("Paid: " + String.format("%.2f", amount) + " (" + method + ") | Date: " + timestamp.format(fmt));
     }
+
 }
