@@ -1,7 +1,3 @@
-
-
-
-
 package service_package;
 
 import model_package.Student;
@@ -67,12 +63,20 @@ public class TuitionManager {
         System.out.print("Enter Student ID: ");
         String id = scanner.nextLine();
 
+        Student found = null;
+
         for (Student s : studentsArray) {
-            if (s.getStudentId().equals(id)) return s;
+            if (s.getStudentId().equals(id)) {
+                found = s;
+                break; 
+            }
         }
 
-        System.out.println("Student not found.");
-        return null;
+        if (found == null) {
+            System.out.println("Student not found.");
+        }
+
+        return found;
     }
 
     private void showProfile() {
@@ -114,7 +118,9 @@ public class TuitionManager {
         System.out.println("\n===== TUITION MATRIX =====");
         System.out.print("Course\\Year\t");
 
-        for (int y = 1; y <= 4; y++) System.out.print("Year " + y + "\t");
+        for (int y = 1; y <= 4; y++) {
+            System.out.print("Year " + y + "\t");
+        }
         System.out.println();
 
         for (int i = 0; i < courseNames.length; i++) {
