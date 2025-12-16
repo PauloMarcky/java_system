@@ -3,8 +3,8 @@ package model_package;
 
 public abstract class Person {
 
-    protected String firstName; // First name
-    protected String lastName; // Last name
+    private String firstName; // First name
+    private String lastName; // Last name
     
     // Constructor for person
     public Person(String firstName, String lastName) {
