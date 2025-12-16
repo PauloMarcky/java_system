@@ -12,11 +12,11 @@ public class TuitionManager {
     // List of students
     Student[] studentsArray = {
         new Student("001", "Marcky", "Balaba", "BSIT", YearLevel.FIRST_YEAR, 25000),
-        new Student("002", "Jescy", "Garma", "BSN", YearLevel.SECOND_YEAR, 32000),
-        new Student("003", "Apriljoy", "Legaspi", "BSN", YearLevel.THIRD_YEAR, 32000),
+        new Student("002", "Jescy", "Garma", "BSN", YearLevel.SECOND_YEAR, 33000),
+        new Student("003", "Apriljoy", "Legaspi", "BSN", YearLevel.THIRD_YEAR, 34000),
         new Student("004", "Lawrence", "Manuel", "BSA", YearLevel.FIRST_YEAR, 25000),
-        new Student("005", "Albertjan", "Santos", "BSCE", YearLevel.FOURTH_YEAR, 27000),
-        new Student("006", "Sample", "Student", "BSIT", YearLevel.SECOND_YEAR, 25000)
+        new Student("005", "Albertjan", "Santos", "BSCE", YearLevel.FOURTH_YEAR, 30000),
+        new Student("006", "Sample", "Student", "BSIT", YearLevel.SECOND_YEAR, 26000)
     };
 
     // Tuition matrix data
