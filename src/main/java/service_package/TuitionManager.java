@@ -1,22 +1,40 @@
 // TuitionManager class - controls system flow and user input
 package service_package;
 
+import java.util.Scanner;
+
+import interface_package.Payable;
+import model_package.Person;
 import model_package.Student;
 import model_package.YearLevel;
-import java.util.Scanner;
 
 public class TuitionManager {
 
     Scanner scanner = new Scanner(System.in); // Input reader
     
+    //same as
+    /*
+    Student student1 = new Student("001", "Marcky", "Balaba", "BSIT", YearLevel.FIRST_YEAR, 25000);
+    Student student2 = new Student("002", "Jescy", "Garma", "BSN", YearLevel.SECOND_YEAR, 33000);
+    Student student3 = new Student("003", "Apriljoy", "Legaspi", "BSN", YearLevel.THIRD_YEAR, 34000);
+    Student student4 = new Student("004", "Lawrence", "Manuel", "BSA", YearLevel.FIRST_YEAR, 25000);
+    Student student5 = new Student("005", "Albertjan", "Santos", "BSCE", YearLevel.FOURTH_YEAR, 30000);
+    Student student6 = new Student("006", "Sample", "Student", "BSIT");
+
+    Student [] studentsArray = {
+        student1, student2, student3, student4, student5, student6
+    };
+    */
+
     // List of students
+    //Anonymous Objects
     Student[] studentsArray = {
         new Student("001", "Marcky", "Balaba", "BSIT", YearLevel.FIRST_YEAR, 25000),
         new Student("002", "Jescy", "Garma", "BSN", YearLevel.SECOND_YEAR, 33000),
         new Student("003", "Apriljoy", "Legaspi", "BSN", YearLevel.THIRD_YEAR, 34000),
         new Student("004", "Lawrence", "Manuel", "BSA", YearLevel.FIRST_YEAR, 25000),
         new Student("005", "Albertjan", "Santos", "BSCE", YearLevel.FOURTH_YEAR, 30000),
-        new Student("006", "Sample", "Student", "BSIT", YearLevel.SECOND_YEAR, 26000)
+        new Student("006", "Sample", "Student", "BSIT")
     };
 
     // Tuition matrix data
@@ -33,10 +51,11 @@ public class TuitionManager {
 
     // Main menu loop
     public void startingPoint() {
+
         int choice;
         
         do {
-            System.out.println("===== MAIN MENU =====");
+            System.out.println("\n===== MAIN MENU =====");
             System.out.println("1) Show Profile Details");
             System.out.println("2) Make Payment");
             System.out.println("3) Payment History");
@@ -92,14 +111,20 @@ public class TuitionManager {
 
     // Displays student profile information
     private void showProfile() {
-        Student s = findStudent(); // Get student
-        if (s != null) s.displayInfo(); // Show info if exists
+        Person p = findStudent(); // Get student 
+        ///same as Person p = new Student(...);
+        // it will be like this Person p = new Student("001", "Marcky", "Balaba", "BSIT", YearLevel.FIRST_YEAR, 25000)
+        if (p != null){
+            p.displayInfo();// Show info if exists
+        }
     }
     
     // Handles payment process
     private void makePayment() {
-        Student s = findStudent(); // Get student
-        if (s == null) return;     // Exit if not found
+
+        Payable p = findStudent(); // Get student
+        //same as Payable p = new Student(...);
+        if (p == null) return;     // Exit if not found
     
         // Show payment options
         System.out.println("\n1) Custom Amount");
@@ -114,16 +139,17 @@ public class TuitionManager {
             System.out.print("Enter amount: ");
             double amount = scanner.nextDouble();
             scanner.nextLine();
-            s.processPayment(amount, "Custom");
+            p.processPayment(amount, "Custom");
     
         // Default payment
         } else if (choice == 2) {
-        s.processDefaultPayment();
+        p.processDefaultPayment();
 
         // Invalid choice
         } else {
             System.out.println("Invalid option.");
         }
+
     }
     
     // Displays payment history of a student
@@ -150,5 +176,6 @@ public class TuitionManager {
             System.out.print(tuitionMatrix[i][j] + "\t");
         }
         System.out.println();
+        }
     }
 }
